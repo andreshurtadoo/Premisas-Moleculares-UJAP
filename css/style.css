@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&family=Roboto:wght@100&display=swap');
+
+.hero{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+
+}
+
+.img{
+   width: 50vh;
+   padding: 2rem 4rem;
+}
+

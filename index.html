@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Premisas JS</title>
+  </head>
+  <body>
+
+    <header class="hero">
+    	<div class="img">
+    		<img src="./img.svg">
+    	</div>
+    	<div class="text">
+    		<h1>Generador de proposiciones moleculares</h1>
+    		<p>Genera todas las combinaciones posibles usando todos los conectivos logicos</p>
+    	</div>
+    </header>
+
+    <main>
+      <br>
+      <div class="container text-center" >
+
+        <div class="row">
+          <!-- PRIMERA COLUMNA -->
+          <div class="col">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">P</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="p" value="tengo hambre">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Q</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="q" value="hago ejercicio">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">R</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="r" value="me levanto temprano">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">S</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="s" value="voy a estudiar">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">T</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="t" value="trabajo bastante">
+            </div>
+          </div>
+
+          <!-- SEGUNDA COLUMNA -->
+          <div class="col">
+            <!-- TEXTAREA NATURAL-->
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Premisa natural:</label>
+            </div>
+            <hr>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button" onclick="getNatural()">Listo</button>
+            </div>
+            <hr>
+            <!-- INPUT NATURAL -->
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Resultado Logico</span>
+              <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="resLogica">
+            </div>
+          </div>
+
+          <!-- TERCERA COLUMNA -->
+          <div class="col">
+            <!-- BOTONES -->
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary" onclick="setPremisa(1)">P</button>
+              <button type="button" class="btn btn-primary" onclick="setPremisa(2)">Q</button>
+              <button type="button" class="btn btn-primary" onclick="setPremisa(3)">R</button>
+              <button type="button" class="btn btn-primary" onclick="setPremisa(4)">S</button>
+              <button type="button" class="btn btn-primary" onclick="setPremisa(5)">T</button>
+              
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Conectivos
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="setConectivo(1)">^</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="setConectivo(2)">v</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="setConectivo(3)">→</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="setConectivo(4)">↔</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="setConectivo(5)">¬</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            <!-- INPUT LOGICO -->
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Escribe la formula aqui!" aria-label="Recipient's username" aria-describedby="button-addon2" id="formula">
+              <button class="btn btn-primary" type="button" id="button-addon2" onclick="getFormula()">Listo</button>
+            </div>
+            <!-- TEXTAREA LOGICO -->
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+              <label for="floatingTextarea">Resultado natural:</label>
+            </div>
+          </div>
+
+          <hr>
+        </div>
+
+        <!-- BTN GENERAR COMBINACIONES -->
+        <button type="button" id="btnGenerar" class="btn btn-primary btn-sm">Generar todas las combinaciones</button>
+        <hr>
+        <ol class="list-group list-group-numbered" id="olList">
+          
+        </ol>
+      </div>
+
+    </main>
+  
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/generar.js"></script>
+  </body>
+</html>
